@@ -1,0 +1,16 @@
+Link: http://www.cs.utsa.edu/~cs3443/notes/chapter10/doc/index.html
+
+Info:
+	Payable.java là một interface khai báo phương thức getPaymentAmount.
+	
+	Employee.java là một abstract class  va là một lớp con của Payable và có ba trường. Nó trừu tượng vì nó không can implement getPaymentAmount.
+	
+	CommissionEmployee.java là một (concrete) Class -  một lớp con của Employee và thêm hai trường.
+	
+	BasePlusCommissionEmployee.java là một (concrete) Class -  một lớp con của CommissionEmployee và thêm một trường.
+	
+	HourlyEmployee.java là một (concrete) Class -  một lớp con của Employee và thêm hai trường.
+	
+	SalariedEmployee.java là một (concrete) Class -  một lớp con của Employee và thêm một trường.
+	
+	Invoice.java là một lớp cụ thể là lớp con của Payable và có bốn trường.
