@@ -5,17 +5,17 @@ import java.util.Scanner;
 
 public class Main {
 	 static Scanner sc = new Scanner(System.in);
-	 static void inputVehicle (Vehicle vehicle) {
-		 System.out.println("Input vehicle ID: ");
-		 vehicle.setVehicleID(sc.nextInt()); sc.nextLine();
-		 System.out.println("Input vehicle Name: ");
-		 vehicle.setVehicleName(sc.nextLine()); 
-		 System.out.println("Input capacity: ");
-		 vehicle.setCapacity(sc.nextInt()); sc.nextLine();
-		 System.out.println("Input Owner: ");
-		 vehicle.setOwner(sc.nextLine());
-		 
-	 }
+		/*
+		 * static void inputVehicle (Vehicle vehicle) {
+		 * System.out.println("Input vehicle ID: "); vehicle.setVehicleID(sc.nextInt());
+		 * sc.nextLine(); System.out.println("Input vehicle Name: ");
+		 * vehicle.setVehicleName(sc.nextLine());
+		 * System.out.println("Input capacity: "); vehicle.setCapacity(sc.nextInt());
+		 * sc.nextLine(); System.out.println("Input Owner: ");
+		 * vehicle.setOwner(sc.nextLine());
+		 * 
+		 * }
+		 */
 
 	public static void main(String[] args) {
 	

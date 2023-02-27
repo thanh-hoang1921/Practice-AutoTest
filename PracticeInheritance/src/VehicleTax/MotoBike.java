@@ -2,8 +2,6 @@ package VehicleTax;
 
 public class MotoBike extends Vehicle {
 	
-	private String color;
-	private double height;
 
 	public MotoBike() {
 		// TODO Auto-generated constructor stub
