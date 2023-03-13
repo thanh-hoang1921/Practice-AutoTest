@@ -41,8 +41,9 @@ public class Lorry extends Transport {
 
 	@Override
 	public void displayTransport() {
+		System.out.println("-----------------Lorry information-----------------");
 		super.displayTransport();
-		System.out.println(toString()); 
+		System.out.println("- Payload: " + payload); 
 	}
 	  
 	  

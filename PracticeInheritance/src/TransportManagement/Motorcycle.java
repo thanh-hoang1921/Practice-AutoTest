@@ -40,8 +40,9 @@ public class Motorcycle extends Transport {
 
 	@Override
 	public void displayTransport() {
+		System.out.println("-----------------Motorcycle information-----------------");
 		super.displayTransport();
-		System.out.println(toString());
+		System.out.println("- Capacity: " + capacity);
 	}
 	  
 	  
