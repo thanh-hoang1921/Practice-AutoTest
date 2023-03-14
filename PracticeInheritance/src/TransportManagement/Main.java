@@ -13,7 +13,7 @@ public class Main {
 	 public static void showMenu() {
 	        System.out.println("-----------MENU------------");
 	        System.out.println("1. Add new transport");
-	        System.out.println("2. Add new owner");
+	        System.out.println("2. Find vehical by vehical number");
 	        System.out.println("3. Find vehical by identity card");
 	        System.out.println("4. Delete all vehical of any manufacturer");
 	        System.out.println("5. Find the manufacturer with the most vehicles under management");
@@ -31,39 +31,47 @@ public class Main {
 		TransportManagement trMana = new TransportManagement();
 		
 		boolean exit = false;
-		int choose;
-		 System.out.println("Input manufacturer: ");
-         String manufacturer = scanner.nextLine();
+		String choose;
 		showMenu();
         while (true) {
-            choose = scanner.nextInt();
+            choose = scanner.nextLine();
             switch (choose) {
-            case 1:
+            case "1":
             	//trMana.inputTransport(scanner);
             	trMana.addData();
+            	trMana.displayTransport();
                 break;
-            case 2:
-                
+            case "2":
+            	 System.out.println("Input vehical number to search: ");
+                 String vehicalNumber = scanner.nextLine();
+                 trMana.searchTransportByVehicalNumber(vehicalNumber).forEach(tr -> {
+                	 tr.displayTransport();
+                 });
                 break;
-            case 3:
-                
+            case "3":
+            	System.out.println("Input identity card to search: ");
+                String identity = scanner.nextLine();
+                trMana.searchTransportByIdNo(identity).forEach(tr -> {
+               	 tr.displayTransport();
+                });
                 break;
-            case 4:
-             //  System.out.println("Input manufacturer: ");
-             //  String manufacturer = scanner.nextLine();
-              // System.out.println("Manu" + manufacturer);
-               trMana.deleteVehical(manufacturer);
+            case "4":
+              System.out.println("Input manufacturer to delete: ");
+              String manufacturer = scanner.nextLine();
+              trMana.deleteTransport1(manufacturer);
+              trMana.displayTransport();
                break;
-            case 5:
-                
+            case "5":
+                trMana.getMaxManufacturer();
+                //trMana.displayTransport();
                 break;
-            case 6:
+            case "6":
                 trMana.sortTransportByVehicalId();
                 break;
-            case 7:
-                
+            case "7":
+                trMana.statisticsTransport();
                 break;   
-            case 0:
+            case "0":
                 System.out.println("exited!");
                 exit = true;
                 break;
@@ -74,7 +82,7 @@ public class Main {
             if (exit) {
                 break;
             }
-            trMana.displayTransport();
+            //trMana.displayTransport();
             // show menu
             showMenu();
         }

@@ -8,7 +8,7 @@ public class Motorcycle extends Transport {
 
 	public Motorcycle() {}
 
-	public Motorcycle(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, String owner, double capacity) {
+	public Motorcycle(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, Owner owner, double capacity) {
 		super(vehicleNumber, manufacturer, yearOfManufacture, color, owner);
 		this.capacity = capacity;
 	}

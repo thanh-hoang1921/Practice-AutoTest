@@ -3,6 +3,7 @@ package TransportManagement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,12 +14,13 @@ public abstract class Transport {
 	private String manufacturer;
 	private String yearOfManufacture;
 	private String color;
-	private String owner;
+	private Owner owner;
 
 	public Transport() {
 	}
+	
 
-	public Transport(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, String owner) {
+	public Transport(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, Owner owner) {
 		super();
 		this.vehicleNumber = vehicleNumber;
 		this.manufacturer = manufacturer;
@@ -59,11 +61,11 @@ public abstract class Transport {
 		this.color = color;
 	}
 
-	public String getOwner() {
+	public Owner getOwner() {
 		return owner;
 	}
 
-	public void setOwner(String owner) {
+	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
 
@@ -106,8 +108,7 @@ public abstract class Transport {
 
 		System.out.println("Input vehical color: ");
 		color = scanner.nextLine();
-		System.out.println("Input vehical owner: ");
-		owner = scanner.nextLine();
+		owner.inputOwner();
 	}
 
 	/**
@@ -118,7 +119,7 @@ public abstract class Transport {
 		System.out.println("- Manufacturer: " + manufacturer);
 		System.out.println("- Year of manufacture: " + yearOfManufacture);
 		System.out.println("- Vehical color: " + color);
-		System.out.println("- Vehical owner: " + owner);
+		owner.displayOwner();
 	}
 
 	/**
@@ -173,4 +174,24 @@ public abstract class Transport {
 		return false;
 	}
 
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(color, manufacturer, owner, vehicleNumber, yearOfManufacture);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (this.getClass() != obj.getClass())
+			return false;
+		Transport other = (Transport) obj;
+		return Objects.equals(manufacturer, other.manufacturer);
+	}
+
+	
 }

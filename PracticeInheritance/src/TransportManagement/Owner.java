@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class Owner {
 
 	private String fullName;
-	private long idNo;
+	private String idNo;
 	private String email;
 	
 	public Owner() {}
 	
 	
-	public Owner(String fullName, long idNo, String email) {
+	public Owner(String fullName, String idNo, String email) {
 		super();
 		this.fullName = fullName;
 		this.idNo = idNo;
@@ -28,11 +28,11 @@ public class Owner {
 		this.fullName = fullName;
 	}
 
-	public long getIdNo() {
+	public String getIdNo() {
 		return idNo;
 	}
 
-	public void setIdNo(long idNo) {
+	public void setIdNo(String idNo) {
 		this.idNo = idNo;
 	}
 
@@ -51,12 +51,12 @@ public class Owner {
 		System.out.println("Input email: ");
 		email = scanner.nextLine();
 		System.out.println("Input id number: ");
-		idNo = Long.parseLong(scanner.nextLine());
+		idNo = scanner.nextLine();
 	}
 
 	
 	public void displayOwner() {
-		System.out.println("------------Owner Information---------");
+		//System.out.println("------------Owner Information---------");
 		System.out.println("- Full name: " + fullName);
 		System.out.println("- Email: " + email);
 		System.out.println("- Indentity card: " + idNo);

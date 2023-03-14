@@ -8,7 +8,7 @@ public class Lorry extends Transport {
 	
 	public Lorry() {}
 
-	public Lorry(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, String owner, double payload) {
+	public Lorry(String vehicleNumber, String manufacturer, String yearOfManufacture, String color, Owner owner, double payload) {
 		super(vehicleNumber, manufacturer, yearOfManufacture, color, owner);
 		this.payload = payload;
 	}
