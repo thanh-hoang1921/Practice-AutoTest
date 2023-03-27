@@ -44,8 +44,15 @@ public class Main {
 		List<ListOfStudyResult> resultList3 = new ArrayList<ListOfStudyResult>();
 
 		resultList1.add(new ListOfStudyResult("Semester I", 8.0));
-		resultList2.add(new ListOfStudyResult("Semester II", 9.55));
-		resultList3.add(new ListOfStudyResult("Semester III", 6.05));
+		resultList2.add(new ListOfStudyResult("Semester II", 4.55));
+		resultList3.add(new ListOfStudyResult("Semester III", 8.9));
+		
+		//Add all results in list
+		List<ListOfStudyResult> resultList = new ArrayList<ListOfStudyResult>();
+		
+		resultList.addAll(resultList1);
+		resultList.addAll(resultList2);
+		resultList.addAll(resultList3);
 
 		// Add data in List<Student>
 		List<Student> itStudent = new ArrayList<Student>();
@@ -54,13 +61,13 @@ public class Main {
 		List<Student> mathStudent = new ArrayList<Student>();
 
 		// IT student list
-		englishStudent.add(new FormalStudent("TR9827", "Ky Quang Anh Thinh", "01/09/2005", 2022, 20.4, resultList2));
+		//englishStudent.add(new FormalStudent("TR9827", "Ky Quang Anh Thinh", "01/09/2005", 2022, 20.4, resultList2));
 		itStudent.add(new FormalStudent("AH1234", "Nguyen Thanh Dat", "12/03/2001", 2017, 30, resultList1));
 		itStudent.add(new IncumbentStudent("KO0983", "Ly Tu That", "23/11/1999", 2022, 16.5, resultList3, "HaNoi"));
-		//itStudent.add(new IncumbentStudent("TY02183", "Wanna", "23/11/1999", 2022, 16.5, resultList3, "HaNoi"));
+		itStudent.add(new FormalStudent("TY02183", "Wanna", "23/11/1999", 2022, 16.5, resultList3));
 		
 		// English student list
-		//englishStudent.add(new FormalStudent("TR9827", "Ky Quang Anh Thinh", "01/09/2005", 2022, 20.4, resultList2));
+		englishStudent.add(new FormalStudent("TR9827", "Ky Quang Anh Thinh", "01/09/2005", 2022, 20.4, resultList2));
 		englishStudent.add(new IncumbentStudent("KO0983", "Ly Tu That", "23/11/1999", 2018, 22, resultList1, "HaNoi"));
 		
 		// Geography student list
@@ -101,52 +108,44 @@ public class Main {
 			choose = scanner.nextLine();
 			switch (choose) {
 			case "1":
-				//showHeader();
 				stManagement.displayStudent(studentList);
 				break;
 			case "2":
-				stManagement.findByFormalStudent(studentList).forEach(student -> {
-					student.displayStudentInfo();
-				});
+				/*
+				 * stManagement.findByFormalStudent(studentList).forEach(student -> {
+				 * student.displayStudentInfo(); });
+				 */
+				stManagement.checkStudentType(studentList);
 				break;
 			case "3":
 				stManagement.displayStudentByAllDepartment(departmentList);
 				break;
 			case "4":
-				stManagement.countFormalStudent(itDepartment);
-				stManagement.countFormalStudent(englishDepartment);
-				stManagement.countFormalStudent(geographyDepartment);
+				stManagement.totalFormalStudentOfDepartment(departmentList);
 				break;
 			case "5":
-				/*
-				 * stManagement.findHighScore(itDepartment);
-				 * stManagement.findHighScore(englishDepartment);
-				 * stManagement.findHighScore(geographyDepartment);
-				 * stManagement.findHighScore(mathDepartment);
-				 */
-				stManagement.findHighScore1(departmentList);
+				stManagement.findStudentHighScoreByDepartment(departmentList);
 				break;
 			case "6":
-				stManagement.getStudentByLocation(studentList, "HaNoi");
+				stManagement.findStudentByLocationByDepartment(departmentList, "HaNoi");
 				break;
 			case "7":
-				stManagement.getGoodStudentAtTheEndOfTerm(studentList);
+				stManagement.findGoodStudentAtTheEndOfTermByDepartment(departmentList);
 				break;
 			case "8":
-				stManagement.findGoodStudent(studentList);
+				stManagement.findHighestGPAOfDepartment(departmentList);
 				break;
 			case "9":
 				stManagement.sortByDepartmentAndAcademicYear(departmentList);
 				break;
 			case "10":
-				stManagement.statisticsStudent(studentList);
+				stManagement.statisticByDepartment(departmentList);
 				break;
 			case "0":
 				System.out.println("exited!");
 				exit = true;
 				break;
 			default:
-				//System.out.println("invalid! please choose action in below menu:");
 				showMenu();
 				break;
 			}

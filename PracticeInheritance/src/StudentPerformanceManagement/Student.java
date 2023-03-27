@@ -2,7 +2,7 @@ package StudentPerformanceManagement;
 
 import java.util.List;
 
-public class Student {
+public abstract class Student {
 	private String studentId;
 	private String fullName;
 	private String dateOfBirth;

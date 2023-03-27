@@ -1,5 +1,7 @@
 package StudentPerformanceManagement;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Department {
@@ -28,17 +30,24 @@ public class Department {
 	}
 	
 	public void displayDepartment() {
-		for (Student student: studentList) {
-			student.displayStudentInfo();
-			System.out.println("- Department: " + departmentName);
-		}
+		/*
+		 * Collections.sort(studentList, new Comparator<Student>() {
+		 * 
+		 * @Override public int compare(Student o1, Student o2) { return
+		 * o2.getYearOfAdmission() - o1.getYearOfAdmission(); } });
+		 * studentList.forEach(student -> student.displayStudentInfo());
+		 */
+		  Collections.sort(studentList, new SortByYearOfAdmission());
+		  studentList.forEach(st -> {
+			  st.displayStudentInfo();
+		  });
 	}
 	
 	public int getAcademicYearofStudent() {
 		int academicYear = 0;
 		for (Student student: studentList) {
 			academicYear = student.getYearOfAdmission();
-			//System.out.println("- academic year: " + academicYear);
+			System.out.println("- academic year: " + academicYear);
 		}
 		return academicYear;
 	}
