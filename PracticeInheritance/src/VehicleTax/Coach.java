@@ -14,6 +14,7 @@ public class Coach extends Vehicle {
 	}
 
 	public Coach(int numberSeat) {
+		super();
 		this.numberSeat = numberSeat;
 	}
 
@@ -27,8 +28,9 @@ public class Coach extends Vehicle {
 
 	@Override
 	public double caculateTax() {
-		if (numberSeat >= 5)
+		if (numberSeat >= 5){
 			return super.caculateTax() + 0.1 + 0.2 + 0.3;
+    }
 		return super.caculateTax() + 0.1 + 0.2 + 0.5;
 	}
 

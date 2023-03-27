@@ -1,26 +1,11 @@
 package VehicleTax;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Main {
 	 static Scanner sc = new Scanner(System.in);
-		/*
-		 * static void inputVehicle (Vehicle vehicle) {
-		 * System.out.println("Input vehicle ID: "); vehicle.setVehicleID(sc.nextInt());
-		 * sc.nextLine(); System.out.println("Input vehicle Name: ");
-		 * vehicle.setVehicleName(sc.nextLine());
-		 * System.out.println("Input capacity: "); vehicle.setCapacity(sc.nextInt());
-		 * sc.nextLine(); System.out.println("Input Owner: ");
-		 * vehicle.setOwner(sc.nextLine());
-		 * 
-		 * }
-		 */
-
-	 
 		
 	public static boolean IsNumberic (String str) {
 			String regex = "-?\\d+(\\.\\d+)?";
@@ -35,10 +20,8 @@ public class Main {
 	public static void main(String[] args) {
 	
 		DecimalFormat df = new DecimalFormat("#.#####");
-	//	BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 
 		Vehicle bicycle = new Bicycle();
-		//inputVehicle(bicycle);
 		System.out.println("Bicycle tax: " + df.format(bicycle.caculateTax()));
 		
 		Vehicle motobike = new MotoBike();
