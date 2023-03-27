@@ -15,7 +15,7 @@ public class FormalStudent extends Student {
 
 	@Override
 	public void displayStudentInfo() {
-		System.out.println("-----------Formal Student Information----------");
+		System.out.println("\n-----------Formal Student Information----------");
 		super.displayStudentInfo();
 	}
 

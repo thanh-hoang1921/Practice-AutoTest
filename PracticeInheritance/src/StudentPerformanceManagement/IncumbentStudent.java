@@ -24,7 +24,7 @@ public class IncumbentStudent extends Student {
 
 	@Override
 	public void displayStudentInfo() {
-		System.out.println("-----------Incumbent Student Information----------");
+		System.out.println("\n-----------Incumbent Student Information----------");
 		super.displayStudentInfo();
 		System.out.println("- Traning location: " + trainingLinkLocation);
 	}
