@@ -28,10 +28,10 @@ public class Coach extends Vehicle {
 
 	@Override
 	public double caculateTax() {
-		if (numberSeat >= 5)
+		if (numberSeat >= 5){
 			return super.caculateTax() + 0.1 + 0.2 + 0.3;
-		else
-			return super.caculateTax() + 0.1 + 0.2 + 0.5;
+    }
+		return super.caculateTax() + 0.1 + 0.2 + 0.5;
 	}
 
 }

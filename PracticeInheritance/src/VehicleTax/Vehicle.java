@@ -1,6 +1,6 @@
 package VehicleTax;
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int vehicleID, capacity;
 	private String vehicleName, owner;
@@ -50,7 +50,8 @@ public class Vehicle {
 	}
 
 	public double caculateTax() {
-		double tax = 0;
-		return tax;
+		//double tax = 0;
+		//return tax;
+		return 0;
 	}
 }

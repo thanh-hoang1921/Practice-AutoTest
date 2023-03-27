@@ -1,3 +1,6 @@
 RemoteSystemsTempFiles/
 .metadata/
-Java-example/bin/
+/Java-example/bin/
+/PracticeDate/bin/
+/PracticeInheritance/bin/
+/PracticeInheritance/hs_err_pid16736.log

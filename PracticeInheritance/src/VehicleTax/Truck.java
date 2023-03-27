@@ -15,6 +15,4 @@ public class Truck extends Vehicle {
 	public double caculateTax() {
 		return super.caculateTax() + 0.1 + 0.02;
 	}
-	
-
 }
